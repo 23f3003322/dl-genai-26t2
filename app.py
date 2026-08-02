@@ -1,5 +1,5 @@
 import gradio as gr
-
+import os
 from src.inference import predict
 
 
@@ -162,5 +162,5 @@ with gr.Blocks(
 demo.launch(
     theme=gr.themes.Soft(),
     server_name="0.0.0.0",
-    server_port=7860
+    server_port=int(os.getenv("PORT", 7860))
 )
